@@ -8,3 +8,6 @@
 * How to use the command line
 * bin directories and global PATHs
 * How to use git
+
+Git checkout "commitname"
+Git checkout head ~ <- go back one commit back
