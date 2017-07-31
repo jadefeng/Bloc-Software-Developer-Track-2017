@@ -9,7 +9,6 @@
      min-height: 100%;         /* says the height of the body must be, at minimum, 100% of the window */
  }
 
-
   .navbar {
      padding: 0.5rem;
      background-color: rgb(101,18,95);
@@ -20,7 +19,6 @@
      left: 2rem; 
      /*em is a relative unit for calculating the size of an element. It is the width of the letter 'm'*/
  }
-
 
  /*-webkit- are 'vendor prefixes'. They're for any CSS property that has not been officially adopted into CSS3*/
 
@@ -33,11 +31,31 @@
 
  /*This allows all elements in Bloc Jams to be sized using border-box*/
 
+ .container {
+     margin: 0 auto;
+     max-width: 64rem;
+ }
+
   /* Medium and small screens (640px) */
   /*Media query is followed by the constraint */
  @media (min-width: 640px) { /*big phones and tablets*/
      html { font-size: 112%; }
 
+      .column {
+         float: left;
+         padding-left: 1rem;
+         padding-right: 1rem;
+     }
+     /*The column class will be shared for all items in our grid system*/
+     /*Clear is a CSS property that specifies whether an element can be next to floating elements that precede it or moved down*/
+
+     /*The class names correspond to the fraction of the width they must occupy*/
+     .column.full { width: 100%; }
+     .column.two-thirds { width: 66.7%; }
+     .column.half { width: 50%; }
+     .column.third { width: 33.3%; }
+     .column.fourth { width: 25%; }
+     .column.flow-opposite { float: right; }
  }
  
  /* Large screens (1024px) */

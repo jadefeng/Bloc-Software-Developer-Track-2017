@@ -28,14 +28,10 @@
  
  .selling-points {
      position: relative;
-     display: table;
-     width: 100%;
  }
  
  .point { /*The table-cell allows the elements to be displayed in a table-like layout*/
-     display: table-cell;
      position: relative;
-     width: 33.3%;
      padding: 2rem;
      text-align: center;
  }
