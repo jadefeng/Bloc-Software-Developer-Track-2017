@@ -66,3 +66,15 @@
  /*This creates a responsive grid that breaks the elements into "device breakpoints" based on the size of the media screen
 
  The @media queries correspond to 'em' measurements for medium and large devices*/
+
+
+/*Clearfix */
+.clearfix::before,
+.clearfix::after {
+   content: " ";
+   display: table;
+}
+
+.clearfix::after {
+   clear: both;
+}
