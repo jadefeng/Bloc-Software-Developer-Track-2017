@@ -72,6 +72,9 @@
      max-width: 64rem;
  }
 
+ .container.narrow {
+     max-width: 56rem;
+ }
   /* Medium and small screens (640px) */
   /*Media query is followed by the constraint */
  @media (min-width: 640px) { /*big phones and tablets*/
