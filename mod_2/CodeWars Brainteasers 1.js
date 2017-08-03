@@ -46,3 +46,55 @@ function createPhoneNumber(numbers){
 // * Powers of 2: For some reason, my code is not submitting. Please see attached commit. 
 // * Frequent arrays: https://www.codewars.com/kata/reviews/565855365c9ceebb90000053/groups/5982c6a2eda935126a001c15
 // * Phone number: https://www.codewars.com/kata/reviews/525f50e3b73515a6db000b86/groups/5982c5f90634afa48e000774 
+
+// Musical Pitch
+
+function pitchClass(note){
+	var pitchObj = {'C' : 0, 
+		'D' : 2, 
+		'E' : 4, 
+		'F' : 5, 
+		'G' : 7, 
+		'A' : 9, 
+		'B' : 11 
+	}
+
+	var key = note.charAt(0);
+
+	if (pitchObj.hasOwnProperty(key)) {
+		var key = note.charAt(0)
+		var keyValue 
+
+		if (note.length == 1) {  // If note is only one letter, then return the value
+			keyValue = pitchObj[key];
+
+		} else if (note.length == 2) { // If note has a sharp or flat, then return the adjusted value
+			var pitch = note.charAt(1)
+			console.log("the pitch is " + pitch)
+			
+			if (pitch == "#") {
+				keyValue = pitchObj[key] + 1;
+			} else if (pitch == "b") {
+				keyValue = pitchObj[key] - 1;
+			} else {
+				keyValue = null;
+			}
+
+		} else { 
+			keyValue = null
+		}
+
+		// Considering the edge cases of <0 or >12
+		if (keyValue == 12) {
+			return 0;
+		} else if ( keyValue == -1) {
+			return 11;
+		} else {
+			return keyValue;
+		}
+
+	} else {
+		return null;
+	}
+}
+
