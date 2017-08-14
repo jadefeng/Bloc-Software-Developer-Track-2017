@@ -11,11 +11,21 @@
 
      }
 
-     // for (var i = 0; i < points.length; i++) {
-     //    revealPoint(i);
-     // }
+     var actions =[]
 
-     forEach(points, revealPoint)
+     for (var i = 0; i < points.length; i++) {
+        // actions[i] = function(index) {
+        //     revealPoint(index);
+        // }
+        
+        // setTimeout(function(){ 
+        //     // revealPoint(i); 
+        //     console.log(i);
+        // }, 3000);
+        revealPoint(i);
+     }
+
+     // forEach(points, revealPoint)
  
  };
 
