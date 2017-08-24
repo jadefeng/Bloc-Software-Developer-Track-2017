@@ -87,17 +87,19 @@ var findParentByClassName = function( element, parentClassName ) {
         var currentParent = element.parentElement;
         // While currentParent is NOT the parent class name and is NOT null, then repeat the loop
 
-        while (currentParent.className !== null) {
+        while (currentParent.className !== null && currentParent.className !== parentClassName) {
             if (currentParent.className == parentClassName) { // if we found that the current parent does match the class name
                 currentParent = currentParent.parentElement;
-                return currentParent
             } else {
                 // parent does NOT patch the class name
                 console.log("No parent found")
             }
+            return currentParent
         }
 
-        return console.log("No parent found with that class name")
+        return currentParent
+        console.log("No parent found with that class name")
+
     }
 }
 
@@ -173,7 +175,7 @@ window.onload = function() {
               event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate;
             var song = getSongItem(event.target);
 
-
+            console.log("the song is ", song)
             if (song.getAttribute('data-song-number') !== currentlyPlayingSong) {
                 song.innerHTML = playButtonTemplate;
             }
@@ -185,6 +187,7 @@ window.onload = function() {
   for (var i = 0; i < songRows.length; i++) {
          songRows[i].addEventListener('mouseleave', function(event) {
             // caching the song we're leaving
+            console.log("leaving the mouse");
              var songItem = getSongItem(event.target);
              var songItemNumber = songItem.getAttribute('data-song-number');
  
