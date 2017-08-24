@@ -90,7 +90,7 @@ var findParentByClassName = function(element, targetClass) {
     }
 };
 
-// Assignment challenge - not completely happy with
+// Assignment challenge - not completely happy with the outcome.
 // var findParentByClassName = function( element, parentClassName ) {
 //     // QUESTION: why do we need to check for the existance of the elemClassName within this argument
 //     if (element) {
