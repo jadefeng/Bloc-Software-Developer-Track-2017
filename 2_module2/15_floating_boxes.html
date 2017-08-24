@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by anonymous (http://jsbin.com/xuqofogigi/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="Position Elements Horizontally">
+  <meta charset="utf-8">
+  <title>Position Elements Horizontally</title>
+<style id="jsbin-css">
+/* Example CSS: */
+
+.table {
+  display: table;
+  margin: 20px; 
+  border-spacing: 5px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  display: table-cell;
+  background-color: red;
+}
+
+/* ~~~ uncomment to view default vertical display: ~~~ */
+/* .cell {
+  display: block;
+  margin: 5px 0;
+} */
+
+
+/* Your CSS: 
+
+/* Method 1 */
+
+.parent {
+  display:table;
+  margin: 10px ;
+  border-spacing: 5px;
+}
+
+.element {
+  display: inline-block;
+  float: left;
+  margin: 0 0 0 0.1em;
+  width: 90px;
+  height: 90px;
+  background-color: blue;
+} 
+
+/* Method 2 */
+
+.parent2 {
+  display:table;
+  border-spacing: 0px;
+  padding: 0px;
+}
+
+.element2 {
+  display: block;
+  float:left;
+  width: 100px;
+  height: 100px;
+  margin: 0px 1px;
+  background-color: pink;
+}  
+</style>
+</head>
+<body>
+<!-- Example HTML: -->
+  <div class="table">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+  
+<!-- Find another way to display the elements horizontally -->  
+  
+  <div class="parent">
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+  </div>
+  
+<!-- Find a third way to display the elements horizontally -->  
+  
+  <div class="parent2">
+    <div class="element2"></div>
+    <div class="element2"></div>
+    <div class="element2"></div>
+  </div>
+</body>
+</html>

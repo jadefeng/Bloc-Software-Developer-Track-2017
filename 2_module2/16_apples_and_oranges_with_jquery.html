@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by anonymous (http://jsbin.com/vumajaxibo/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="Practice Refactoring to jQuery">
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>Practice Refactoring to jQuery</title>
+<style id="jsbin-css">
+#refrigerator {
+  background-color: #FFFFFF;
+  width: 200px;
+  border: 5px solid #333333;
+}
+
+#refrigerator img {
+  width: 100px;
+  display: block;
+  margin: 30px auto;
+}
+</style>
+</head>
+<body>
+  <div id="refrigerator">
+    <div class="oranges">
+      <img src="https://whydyoueatthat.files.wordpress.com/2011/12/oranges-vitamin-c-lg.jpg">
+    </div>
+    <div class="apples">
+      <img src="http://lymanorchards.com/files/7013/6725/1487/apples.jpg">
+    </div>
+  </div>
+<script id="jsbin-javascript">
+$(document).ready(function() {
+ // executes when HTML-Document is loaded and DOM is ready
+  alert("Pick a healthy snack from the refrigerator!");
+});
+
+$(".oranges:first-child").click( function() {
+  oranges.css("border", "5px solid orange")
+  alert("You chose an orange!");
+});
+
+$(".apples:first-child").onclick = function() {
+  apples.css("border","5px solid red");
+  alert("You chose an apple!");
+};
+</script>
+</body>
+</html>
