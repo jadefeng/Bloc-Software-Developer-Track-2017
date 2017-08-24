@@ -79,29 +79,41 @@
      }
  };
 
-var findParentByClassName = function( element, parentClassName ) {
-    // QUESTION: why do we need to check for the existance of the elemClassName within this argument
+
+var findParentByClassName = function(element, targetClass) {
     if (element) {
-        // var obj = document.getElementsByClassName(elemClassName)[0];
-
         var currentParent = element.parentElement;
-        // While currentParent is NOT the parent class name and is NOT null, then repeat the loop
-
-        while (currentParent.className !== null && currentParent.className !== parentClassName) {
-            if (currentParent.className == parentClassName) { // if we found that the current parent does match the class name
-                currentParent = currentParent.parentElement;
-            } else {
-                // parent does NOT patch the class name
-                console.log("No parent found")
-            }
-            return currentParent
+        while (currentParent.className !== targetClass && currentParent.className !== null) {
+            currentParent = currentParent.parentElement;
         }
-
-        return currentParent
-        console.log("No parent found with that class name")
-
+        return currentParent;
     }
-}
+};
+
+// Assignment challenge - not completely happy with
+// var findParentByClassName = function( element, parentClassName ) {
+//     // QUESTION: why do we need to check for the existance of the elemClassName within this argument
+//     if (element) {
+//         // var obj = document.getElementsByClassName(elemClassName)[0];
+
+//         var currentParent = element.parentElement;
+//         // While currentParent is NOT the parent class name and is NOT null, then repeat the loop
+
+//         while (currentParent.className !== null && currentParent.className !== parentClassName) {
+//             if (currentParent.className == parentClassName) { // if we found that the current parent does match the class name
+//                 currentParent = currentParent.parentElement;
+//             } else {
+//                 // parent does NOT patch the class name
+//                 console.log("No parent found")
+//             }
+//             return currentParent
+//         }
+
+//         return currentParent
+//         console.log("No parent found with that class name")
+
+//     }
+// }
 
 // QUESTION: Could we go over this function from https://github.com/Bloc/curriculum-public/blob/master/web-development/frontend/foundation/27-dom-scripting-play-pause-part-2/get-song-item.js
 var getSongItem = function(element) {
@@ -123,12 +135,13 @@ var getSongItem = function(element) {
 }
 
  var clickHandler = function(targetElement) {
-     var songItem = getSongItem(targetElement);  
+
+     var songItem = getSongItem(targetElement);
 
      if (currentlyPlayingSong === null) {
          songItem.innerHTML = pauseButtonTemplate;
          currentlyPlayingSong = songItem.getAttribute('data-song-number');
-      } else if (currentlyPlayingSong === songItem.getAttribute('data-song-number')) {
+     } else if (currentlyPlayingSong === songItem.getAttribute('data-song-number')) {
          songItem.innerHTML = playButtonTemplate;
          currentlyPlayingSong = null;
      } else if (currentlyPlayingSong !== songItem.getAttribute('data-song-number')) {
@@ -175,7 +188,7 @@ window.onload = function() {
               event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate;
             var song = getSongItem(event.target);
 
-            console.log("the song is ", song)
+            console.log("the song is ", song.getAttribute("data-song-number"), currentlyPlayingSong);
             if (song.getAttribute('data-song-number') !== currentlyPlayingSong) {
                 song.innerHTML = playButtonTemplate;
             }
@@ -190,7 +203,9 @@ window.onload = function() {
             console.log("leaving the mouse");
              var songItem = getSongItem(event.target);
              var songItemNumber = songItem.getAttribute('data-song-number');
- 
+        
+            console.log("the mouse is leaving ", songItemNumber, currentlyPlayingSong);
+
              // conditional check that the item the mouse is leaving is NOT the current song
              if (songItemNumber !== currentlyPlayingSong) {
                  songItem.innerHTML = songItemNumber;
