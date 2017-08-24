@@ -1,0 +1,119 @@
+ html {
+     height: 100%; /* makes sure our HTML takes up 100% of the browser window */
+     font-size: 100%;
+ }
+ 
+ body {
+     font-family: 'Open Sans'; /* sets our font to the "Open Sans" typeface */
+     color: white;             /* sets the text color to white */
+     min-height: 100%;         /* says the height of the body must be, at minimum, 100% of the window */
+ }
+
+  .navbar {
+     padding: 0.5rem;
+    position: relative;
+     background-color: rgba(101,18,95,0.5);
+     z-index: 1;
+ }
+ 
+ .navbar .logo {
+     position: relative; /* positioning will be explained in a resource */
+     left: 2rem; 
+     /*em is a relative unit for calculating the size of an element. It is the width of the letter 'm'*/
+     cursor: pointer;  /* produces the finger-pointer icon when you hover over the logo */
+ }
+ 
+ .navbar .links-container {
+     display: table;
+     position: absolute;
+     top: 0;
+     right: 0;
+     height: 100px;
+     color: white;
+ }
+
+
+ .links-container .navbar-link {
+     display: table-cell;
+     position: relative;
+     height: 100%;
+     padding-left: 1rem;
+     padding-right: 1rem;
+     vertical-align: middle;
+     color: white;
+     font-size: 0.625rem;
+     letter-spacing: 0.05rem;
+     font-weight: 700;
+     text-transform: uppercase;
+     text-decoration: none;
+     cursor: pointer;
+ }
+ 
+ .links-container .navbar-link:active {
+    background-color: white;
+ }
+
+ .links-container .navbar-link:hover {
+     color: rgb(233,50,117);
+ }
+ /*-webkit- are 'vendor prefixes'. They're for any CSS property that has not been officially adopted into CSS3*/
+
+
+  *, *::before, *::after {
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+ }
+
+ /*This allows all elements in Bloc Jams to be sized using border-box*/
+
+ .container {
+     margin: 0 auto;
+     max-width: 64rem;
+ }
+
+ .container.narrow {
+     max-width: 56rem;
+ }
+  /* Medium and small screens (640px) */
+  /*Media query is followed by the constraint */
+ @media (min-width: 640px) { /*big phones and tablets*/
+     html { font-size: 112%; }
+
+      .column {
+         float: left;
+         padding-left: 1rem;
+         padding-right: 1rem;
+     }
+     /*The column class will be shared for all items in our grid system*/
+     /*Clear is a CSS property that specifies whether an element can be next to floating elements that precede it or moved down*/
+
+     /*The class names correspond to the fraction of the width they must occupy*/
+     .column.full { width: 100%; }
+     .column.two-thirds { width: 66.7%; }
+     .column.half { width: 50%; }
+     .column.third { width: 33.3%; }
+     .column.fourth { width: 25%; }
+     .column.flow-opposite { float: right; }
+ }
+ 
+ /* Large screens (1024px) */
+ @media (min-width: 1024px) { /*laptops*/
+     html { font-size: 120%; }
+ }
+
+ /*This creates a responsive grid that breaks the elements into "device breakpoints" based on the size of the media screen
+
+ The @media queries correspond to 'em' measurements for medium and large devices*/
+
+
+/*Clearfix */
+.clearfix::before,
+.clearfix::after {
+   content: " ";
+   display: table;
+}
+
+.clearfix::after {
+   clear: both;
+}
