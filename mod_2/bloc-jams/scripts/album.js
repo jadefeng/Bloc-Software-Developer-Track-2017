@@ -28,6 +28,21 @@
      ]
  };
 
+ var albumSwift = {
+     title: '1989',
+     artist: 'Taylor Swift',
+     label: 'EM',
+     year: '2014',
+     albumArtUrl: 'assets/images/album_covers/02.png',
+     songs: [
+         { title: 'Shake It Off', duration: '3:13' },
+         { title: 'Blank Space', duration: '3:01' },
+         { title: 'Welcome to New York', duration: '3:21'},
+         { title: 'Out of the Woods', duration: '3:14' },
+         { title: 'Style', duration: '2:15'}
+     ]
+ };
+
   var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -64,6 +79,22 @@
      }
  };
  
- window.onload = function() {
+var albumList = [ albumPicasso, albumMarconi, albumSwift ];
+var albumCounter = 1;
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
+
+// set an event listener on the Image
+albumImage.addEventListener("click", function() {
+    setCurrentAlbum( albumList[albumCounter] );
+    if (albumCounter == 2){
+        albumCounter = 0;
+    } else {
+        albumCounter++;
+    }
+})
+
+
+window.onload = function() {
      setCurrentAlbum(albumPicasso);
  };
+
