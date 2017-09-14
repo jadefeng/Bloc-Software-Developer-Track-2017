@@ -262,6 +262,7 @@ var updatePlayerBarSong = function() {
     $('.main-controls .play-pause').html(playerBarPauseButton);  
 };
 
+
 var togglePlayFromPlayerBar = function() {
     
     var currentlyPlayingCell = getSongNumberCell(currentlyPlayingSongNumber);
@@ -296,6 +297,7 @@ var currentVolume = 80;
 
 var $previousButton = $('.main-controls .previous');
 var $nextButton = $('.main-controls .next');
+
 var $playerBarPlayToggle = $('.main-controls .play-pause');
 
 $(document).ready(function() {
@@ -303,5 +305,6 @@ $(document).ready(function() {
     setupSeekBars();
     $previousButton.click(previousSong);
     $nextButton.click(nextSong);
+
     $playerBarPlayToggle.click(togglePlayFromPlayerBar);
 });
