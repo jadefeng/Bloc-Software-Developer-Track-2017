@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="todo">
+<head>
+	<!-- add the ng-app directive to the <html> tag to auto-bootstrap our  todo module. -->
+	<title>AngularJS TODO</title>
+</head>
+<body ng-controller="TodoController as todo">
+   <h1>AngularJS Todo</h1>
+     <ul id="todo-list">
+       <!-- <li ng-repeat="task in todo.tasks track by $index"> -->
+       	<!-- This code works with and without track by $index ... then why include it? -->
+       <li ng-repeat="task in todo.tasks">
+         {{ task }}
+         <button ng-click="todo.deleteTask($index)"> Delete </button>
+       </li>
+    </ul>   
+  
+     <form ng-submit="todo.createTask()">
+     	<!-- Using the ng-submit, call a function in the controller named  createTask. -->
+     	<input type="text"  ng-model="todo.taskName">	
+     	<input type="submit">	
+     </form>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+     <script src="app.js"></script>  	
+
+</body>
+</html>
